@@ -16,37 +16,51 @@ import org.jointheleague.graphical.robot.Robot;
 public class RobotTreasureHunt implements KeyEventDispatcher{
 
 	// 1. Create a new mini robot (type "mini" inside the parentheses)
-	
+	Robot YL= new Robot("mini");
 	private void goUp() throws InterruptedException {
 		// 2. Make the robot move up the screen (use setAngle(angle) and microMove(distance))
-		
+		YL.setAngle(0);
+		YL.microMove(5);
 	}
 
 	private void goDown() throws InterruptedException{
 		// 3. make the robot move down the screen (use setAngle(angle) and microMove(distance))
-		
+		YL.setAngle(180);
+		YL.microMove(5);
 	}
 
 	private void turnLeft() throws InterruptedException{
 		// 4. Make the robot turn to the left (use setAngle(angle) and microMove(distance))
-
+		YL.setAngle(-90);
+		YL.microMove(5);
 	}
 
 	private void turnRight() throws InterruptedException{
 		// 5. make the robot turn to the right (use setAngle(angle) and microMove(distance))
-		
+		YL.setAngle(90);
+		YL.microMove(5);
 	}
 
 	private void spaceBarWasPressed() {
 
 		// 5. Change ROBOTNAME below to match the name of the robot you created in step 1.  THEN, remove the slashes at the beginning of the next two lines
-		//int robotXLocation = ROBOTNAME.getX();
-		//int robotYLocation = ROBOTNAME.getY();
+		int robotXLocation = YL.getX();
+		int robotYLocation = YL.getY();
 		
 		// 6. Print the robotXLocation and robotYLocation variables to the console 
-		
+		System.out.println(robotXLocation);
+		System.out.println(robotYLocation);
 		// 7. If robot is at same location as the little girl
 		//      --make a pop-up tell the robot where to go next
+		if(robotXLocation==725 && robotYLocation==440 ) {
+			JOptionPane.showMessageDialog(null,"Next find the parrot");
+		}
+		if(robotXLocation==590 && robotYLocation==140 ) {
+			JOptionPane.showMessageDialog(null,"Next find the Turtle");
+		}
+		if(robotXLocation==465 && robotYLocation==550 ) {
+			JOptionPane.showMessageDialog(null,"You Won!");
+		}
 		
 		// 8. Give the user subsequent clues at different locations on the image
 		// (pirate robot, swamp, parrots, etc.)
